@@ -6,6 +6,7 @@ namespace Lab02Test
 {
     public class BobsBodaciousBankTest
     {
+        [Fact]
 
     }
 }
