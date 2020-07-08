@@ -61,13 +61,13 @@ v0.8
 
 #### 2020-07-07
 
-v0.1: interface skeleton set up.
-v0.2: testing framework in place.
-v0.4: core logic completed - passes all tests.
-v0.5: interface core functionality in place.
-v0.6: bug fixing and tweaks to interface.
-v0.7: README completed.
-v0.8: tweaks to interface. 
+- v0.1: interface skeleton set up.
+- v0.2: testing framework in place.
+- v0.4: core logic completed - passes all tests.
+- v0.5: interface core functionality in place.
+- v0.6: bug fixing and tweaks to interface.
+- v0.7: README completed.
+- v0.8: tweaks to interface. 
 
 ------------------------------
 For more information on Markdown: https://www.markdownguide.org/cheat-sheet
