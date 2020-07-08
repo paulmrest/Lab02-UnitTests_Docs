@@ -30,6 +30,17 @@ namespace Lab02Test
             decimal amount = 500.00m;
             Deposit(amount);
             Assert.Equal(amount, ViewBalance());
+            Balance = 0.00m;
+        }
+
+        [Fact]
+        public void BalanceAfterWithdrawal()
+        {
+            decimal amount = 500.00m;
+            Balance = amount;
+            decimal withdrawlAmount = 250.00m;
+            Assert.Equal(amount - withdrawlAmount, Withdrawal(withdrawlAmount));
+            Balance = 0.00m;
         }
 
         [Fact]
@@ -40,6 +51,7 @@ namespace Lab02Test
             Deposit(amount);
             Withdrawal(withdrawalAmount);
             Assert.Equal(amount - withdrawalAmount, ViewBalance());
+            Balance = 0.00m;
         }
 
         [Fact]
@@ -47,7 +59,9 @@ namespace Lab02Test
         {
             Balance = 500.00m;
             decimal balance = ViewBalance();
-            Assert.Equal(balance, Withdrawal(-250.00m));
+            Assert.Throws<InvalidOperationException>(() => Withdrawal(-250.00m));
+            Assert.Equal(balance, ViewBalance());
+            Balance = 0.00m;
         }
 
         [Fact]
@@ -55,7 +69,9 @@ namespace Lab02Test
         {
             Balance = 500.00m;
             decimal balance = ViewBalance();
-            Assert.Equal(balance, Deposit(-250.00m));
+            Assert.Throws<InvalidOperationException>(() => Deposit(-250.00m));
+            Assert.Equal(balance, ViewBalance());
+            Balance = 0.00m;
         }
 
         [Fact]
@@ -63,7 +79,9 @@ namespace Lab02Test
         {
             Balance = 500.00m;
             decimal balance = ViewBalance();
-            Assert.Equal(balance, Withdrawal(750.00m));
+            Assert.Throws<InvalidOperationException>(() => Withdrawal(750.00m));
+            Assert.Equal(balance, ViewBalance());
+            Balance = 0.00m;
         }
     }
 }

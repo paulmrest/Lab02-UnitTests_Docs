@@ -5,7 +5,7 @@ namespace Lab02_UnitTest_Docs
     public class BobsBodaciousBank
     {
 
-        public static decimal Balance = 0.0m;
+        public static decimal Balance = 0.00m;
 
         static void Main(string[] args)
         {
@@ -22,10 +22,10 @@ namespace Lab02_UnitTest_Docs
             while (bodacious)
             {
                 Console.WriteLine("Please choose from one of the radical options below (1 to 4):");
-                Console.WriteLine("1.) Check your baller balance");
-                Console.WriteLine("2.) Make a deposit");
-                Console.WriteLine("3.) Make a withdrawal");
-                Console.WriteLine("4.) Exit");
+                Console.WriteLine("1.) Check your baller balance!");
+                Console.WriteLine("2.) Stow your stacks (desposit into your account)!");
+                Console.WriteLine("3.) Get some green (withdraw from your account).");
+                Console.WriteLine("4.) Skip on outta here! (Exit)");
                 string userEntry = Console.ReadLine();
                 try
                 {
@@ -40,16 +40,30 @@ namespace Lab02_UnitTest_Docs
                             Console.WriteLine("Your current balance is: ${0}", ViewBalance());
                             break;
                         case 2:
-                            Withdrawal(0.00m);
+                            Console.WriteLine("Please enter the amount you'd like to deposit:");
+                            string desposit = Console.ReadLine();
+                            decimal despositDec = Convert.ToDecimal(desposit);
+                            decimal newDepBalance = Deposit(despositDec);
+                            Console.WriteLine("After your deposit of ${0}, your balance is: ${1}", despositDec.ToString("F"), newDepBalance.ToString("F"));
                             break;
                         case 3:
+                            Console.WriteLine("Please enter the amount you'd like to withdraw:");
+                            string withdrawal = Console.ReadLine();
+                            decimal withdrawalDec = Convert.ToDecimal(withdrawal);
+                            decimal newWithdBalance = Withdrawal(withdrawalDec);
+                            Console.WriteLine("After your withdrawal of ${0}, your balance is: ${1}", withdrawalDec.ToString("F"), newWithdBalance.ToString("F"));
                             break;
                         case 4:
+                            Console.WriteLine("Thanks for banking bodaciously with Bob today!");
                             bodacious = false;
                             break;
                         default:
                             Console.WriteLine("Something went wrong. Please choose again.");
                             break;
+                    }
+                    if (userOption < 4)
+                    {
+                        Console.WriteLine("Transaction complete. Please choose another or exit.\n");
                     }
                 }
                 catch (FormatException e)
@@ -68,10 +82,6 @@ namespace Lab02_UnitTest_Docs
                     Console.WriteLine(e.Message);
                     Console.WriteLine(e.StackTrace);
                 }
-                finally
-                {
-                    Console.WriteLine("Transaction complete. Please choose another or exit.");
-                }
             }
         }
 
@@ -88,13 +98,21 @@ namespace Lab02_UnitTest_Docs
         /// Removes the specified amount from the account. Will not allow account to drop below $0.00. 
         /// Only accept positive numbers. Returns the balance after the withdrawal.
         /// </summary>
-        /// <param name="amount"></param>
+        /// <param name="amount">Amount to be withdrawn</param>
         /// <returns>Decimal</returns>
         public static decimal Withdrawal(decimal amount)
         {
             if (amount < 0.00m)
             {
-                throw new InvalidOperationException("Withdrawal amount must be ");
+                throw new InvalidOperationException("Withdrawal amount must be a positive number");
+            }
+            else if (Balance - amount < 0)
+            {
+                throw new InvalidOperationException($"Withdrawal cannot exceed balance. Balance is currently: {Balance}");
+            }
+            else
+            {
+                Balance -= amount;
             }
             return ViewBalance();
         }
@@ -103,10 +121,18 @@ namespace Lab02_UnitTest_Docs
         /// Deposits the specified amount into the account. Only accepts positive numbers.
         /// Returns the balance after the deposit.
         /// </summary>
-        /// <param name="amount"></param>
-        /// <returns></returns>
+        /// <param name="amount">Amount to be deposited</param>
+        /// <returns>Decimal</returns>
         public static decimal Deposit(decimal amount)
         {
+            if (amount < 0.00m)
+            {
+                throw new InvalidOperationException("Deposit amount must be a positive number");
+            }
+            else
+            {
+                Balance += amount;
+            }
             return ViewBalance();
         }
     }
