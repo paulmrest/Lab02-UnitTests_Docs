@@ -1,59 +1,73 @@
 # CF - 401 - Lab 02 - Unit Tests & Documentation
 
-# Console Application README Example
+## ATM App (Bob's Bodacious Bank)
 
-## About Me Quiz
-
-Lab01-Exception-Handling
-
-*Author: Harry Potter*
+*Author: Paul M Rest*
 
 ----
 
 ## Description
-***[Tell me about your application, should be about a paragraph]***
-This is a C# console application that will ask a user several questions about me, the
-developer. There are multiple question types ranging from inputting a number to True or False.
-At the end of the game the user receives their total score.
+C#/.NET Core console application that recreates the core functionality of an ATM. Starts
+off with a balance of $0.00, and allows the user to deposit and withdraw money from
+that account. Prevents the balance from dropping below $0.00. Prevents the user
+from depositing or withdrawing a negative amount.
+
+Continues to ask for the user's next transaction until they choose to exit.
 
 ---
 
 ### Getting Started
 Clone this repository to your local machine.
 
+In a command line environment with Git installed:
+
 ```
-$ git clone [repo clone url here]
+git clone <<GIT REPO URL HERE>>
 ```
 
-### To run the program from Visual Studio:
+### To Run the Program from Visual Studio (2019):
 Select ```File``` -> ```Open``` -> ```Project/Solution```
 
-Next navigate to the location you cloned the Repository.
+Next navigate to the directory you cloned the repository to.
 
-Double click on the ```Lab01-About-Me``` directory.
+Double click on the ```Lab02-UnitTest_Docs``` directory.
 
-Then select and open ```AboutMe.sln```
+Then select and open ```Lab02-UnitTest_Docs.sln```
+
+Select ```Debug``` -> ```Start Debugging``` to the run the app with the debugger
+
+OR
+
+Select ```Debug``` -> ```Start Without Debugging```
 
 ---
 
 ### Visuals
-***[Add screenshots of your application in action]***
 
-#### Application Start
-![Image 1](https://via.placeholder.com/750x500)
-#### Using the Application
-![Image 1](https://via.placeholder.com/750x500)
-#### Application End
-![Image 1](https://via.placeholder.com/750x500)
+#### ATM App Start
+![ATM Start](Lab02-UnitTest_Docs/SampleStart.png)
+#### Using the ATM
+![ATM Use](Lab02-UnitTest_Docs/SampleOutput.png)
+#### Exiting the ATM
+![ATM Exit](Lab02-UnitTest_Docs/SampleExit.png)
 
 ---
 
-### Change Log
-***[The change log will list any changes made to the code base. This includes any changes from TA/Instructor feedback]***  
-1.3: *Added summary comments to the methods* - 8 Nov 2010  
-1.2: *Changed variable names to follow proper convention* - 6 Nov 2010  
-1.1: *Added a Try/Catch/Finally for Question 2* - 5 Nov 2010  
+### Current Version
 
+v0.8
+
+### Change Log
+
+#### 2020-07-07
+
+v0.1: interface skeleton set up.
+v0.2: testing framework in place.
+v0.4: core logic completed - passes all tests.
+v0.5: interface core functionality in place.
+v0.6: bug fixing and tweaks to interface.
+v0.7: README completed.
+v0.8: tweaks to interface. 
 
 ------------------------------
 For more information on Markdown: https://www.markdownguide.org/cheat-sheet

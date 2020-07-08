@@ -70,17 +70,20 @@ namespace Lab02_UnitTest_Docs
                 {
                     Console.WriteLine("Please enter your choice as a number between 1 and 4.");
                     Console.WriteLine(e.Message);
+                    Console.WriteLine();
                 }
                 catch (OverflowException e)
                 {
                     Console.WriteLine("An OverflowException occurred.");
                     Console.WriteLine(e.Message);
                     Console.WriteLine(e.StackTrace);
+                    Console.WriteLine();
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                     Console.WriteLine(e.StackTrace);
+                    Console.WriteLine();
                 }
             }
         }
