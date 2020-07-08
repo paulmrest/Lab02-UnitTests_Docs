@@ -45,11 +45,11 @@ Select ```Debug``` -> ```Start Without Debugging```
 ### Visuals
 
 #### ATM App Start
-![ATM Start](Lab02-UnitTest_Docs/SampleStart.png)
+![ATM Start](Lab02-UnitTest_Docs/images/SampleStart.png)
 #### Using the ATM
-![ATM Use](Lab02-UnitTest_Docs/SampleOutput.png)
+![ATM Use](Lab02-UnitTest_Docs/images/SampleOutput.png)
 #### Exiting the ATM
-![ATM Exit](Lab02-UnitTest_Docs/SampleExit.png)
+![ATM Exit](Lab02-UnitTest_Docs/images/SampleExit.png)
 
 ---
 
